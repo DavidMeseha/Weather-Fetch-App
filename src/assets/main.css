@@ -1,0 +1,46 @@
+.card.now {
+  background-color: white !important;
+  color: #000 !important;
+}
+
+.card {
+  width: 18rem;
+  color: white !important;
+  background-color: #000 !important;
+  border-color: gray !important;
+  transition: all 200ms;
+}
+
+.card p,
+.card h6 {
+  transition: all 200ms;
+}
+
+.card:hover {
+  border-color: white !important;
+}
+
+.card:hover p,
+.card:hover h6 {
+  color: white !important;
+}
+
+.card.now:hover p,
+.card.now:hover h6 {
+  color: black !important;
+}
+
+body {
+  background-color: #000 !important;
+  color: white !important;
+}
+
+select {
+  background-color: #000 !important;
+  color: white !important;
+}
+
+select option {
+  background-color: #000;
+  color: white;
+}

@@ -21,7 +21,11 @@
         v-else-if="!!data"
       >
         <CurrentWeatherCard :currentWeatherData="data.current" />
-        <CardComponent v-for="day in data.forecast.forecastday" :dayWeatherData="day" v-bind:key="day.date" />
+        <CardComponent
+          v-for="day in data.forecast.forecastday"
+          :dayWeatherData="day"
+          v-bind:key="day.date"
+        />
       </div>
     </div>
   </section>

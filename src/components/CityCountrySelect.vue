@@ -30,7 +30,7 @@ type countriesKeys = keyof typeof allCountries
 const emit = defineEmits(['changeCity'])
 const selectedCountry = ref<countriesKeys>('EG')
 const cities = computed(() => allCountries[selectedCountry.value][2])
-const selectedCity = ref(cities.value[0][0])
+const selectedCity = ref('Cairo')
 
 function changeCountryHandle() {
   selectedCity.value = cities.value[0][0]

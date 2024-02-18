@@ -40,20 +40,23 @@ import CardComponent from '@/components/CardComponent.vue'
 import CurrentWeatherCard from '@/components/CurrentWeatherCard.vue'
 import type { DayWeatherResponse } from '../types'
 
+const API_KEY = import.meta.env.VITE_API_KEY
+
 const city = ref('Cairo')
 const country = ref('Egypt')
+
+// let ipQuery = useQuery({
+//   queryKey: ['ip'],
+//   queryFn: () =>
+//     axios.get<{ ip: string }>('https://api.ipify.org?format=json').then((res) => res.data)
+// })
 
 let { data, isLoading, isError, refetch, isRefetching } = useQuery({
   queryKey: ['weather', city.value],
   queryFn: () =>
     axios
-      .get<DayWeatherResponse>(
-        `/forecast.json?key=453d0a9ecb4d42c9a9e83332241002&q=${city.value}&days=20`
-      )
-      .then((res) => {
-        console.log(res.data)
-        return res.data
-      })
+      .get<DayWeatherResponse>(`/forecast.json?key=${API_KEY}&q=${city.value}&days=20`)
+      .then((res) => res.data)
 })
 
 function changeCityHandle(props: { selectedCity: string; selectedCountry: string }) {
